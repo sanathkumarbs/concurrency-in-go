@@ -1,3 +1,8 @@
+// A deadlocked program is one in which all concurrent processes
+// are waiting on one another.
+// In this state, the program will never recover without
+// outside intervention.
+
 package main
 
 import (
@@ -46,4 +51,7 @@ func main() {
 	// Both these goroutines are going to sit and wait for the other to release
 	// the lock, there by hitting a deadlock condition
 	wg.Wait()
+
+	// Reference:
+	// https://learning.oreilly.com/library/view/concurrency-in-go/9781491941294/assets/cigo_01in01.png
 }

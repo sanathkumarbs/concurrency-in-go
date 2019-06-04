@@ -31,7 +31,7 @@ func main() {
 
 	mutex.Lock()
 	if data == 0 {
-		time.Sleep(2 * time.Second)
+		time.Sleep(1 * time.Second)
 		fmt.Printf("Expected data to be 0, got %v \n", data)
 	} else {
 		fmt.Printf("Expected data to be not 0, got %v \n", data)

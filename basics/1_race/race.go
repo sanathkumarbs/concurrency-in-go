@@ -25,7 +25,7 @@ func main() {
 	}()
 
 	// Let's check what the data is print accordingly
-	// This will be non-deterministic beacause of race
+	// This will be non-deterministic because of race
 
 	if data == 0 {
 		// One would expect data to be '0' because of the if condition being true

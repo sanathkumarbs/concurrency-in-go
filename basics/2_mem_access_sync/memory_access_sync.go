@@ -13,7 +13,7 @@ var data int
 
 func main() {
 	// Let's use a mutex Lock such that whenever we are
-	// executing a crticial section we acquire our lock
+	// executing a critical section we acquire our lock
 
 	// Also by sharing the same lock with other critical
 	// sections, we are serializing execution of multiple

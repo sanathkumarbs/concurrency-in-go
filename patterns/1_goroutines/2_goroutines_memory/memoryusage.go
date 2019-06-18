@@ -23,7 +23,7 @@ func main() {
 		<-c
 	}
 
-	const numGoRoutines = 1e4
+	const numGoRoutines = 1000000
 	wg.Add(numGoRoutines)
 
 	before := memConsumed()

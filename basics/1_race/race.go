@@ -13,6 +13,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"time"
 )
 
@@ -21,6 +22,7 @@ var data int
 func main() {
 	// Let's start a goroutine
 	go func() {
+		time.Sleep(time.Duration(rand.Intn(2)) * time.Second)
 		data++
 	}()
 

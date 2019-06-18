@@ -14,7 +14,7 @@ func greedyWorker(wg *sync.WaitGroup, sharedLock *sync.Mutex) {
 	var count int
 	for begin := time.Now(); time.Since(begin) <= runtime; {
 		sharedLock.Lock()
-		time.Sleep(3 * time.Nanosecond)
+		time.Sleep(9 * time.Millisecond)
 		sharedLock.Unlock()
 		count++
 	}
@@ -28,15 +28,15 @@ func politeWorker(wg *sync.WaitGroup, sharedLock *sync.Mutex) {
 	var count int
 	for begin := time.Now(); time.Since(begin) <= runtime; {
 		sharedLock.Lock()
-		time.Sleep(1 * time.Nanosecond)
+		time.Sleep(3 * time.Millisecond)
 		sharedLock.Unlock()
 
 		sharedLock.Lock()
-		time.Sleep(1 * time.Nanosecond)
+		time.Sleep(3 * time.Millisecond)
 		sharedLock.Unlock()
 
 		sharedLock.Lock()
-		time.Sleep(1 * time.Nanosecond)
+		time.Sleep(3 * time.Millisecond)
 		sharedLock.Unlock()
 
 		count++
@@ -52,5 +52,6 @@ func main() {
 	wg.Add(2)
 	go greedyWorker(&wg, &sharedLock)
 	go politeWorker(&wg, &sharedLock)
+	// go politeWorker(&wg, &sharedLock)
 	wg.Wait()
 }

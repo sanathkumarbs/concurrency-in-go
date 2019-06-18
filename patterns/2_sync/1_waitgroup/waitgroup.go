@@ -2,10 +2,6 @@
 // to complete when you either don’t care about the result of the concurrent
 // operation, or you have other means of collecting their results.
 
-// If neither of those conditions are true, I suggest you use channels and
-// a select statement instead. WaitGroup is so useful, I’m introducing it
-// first so I can use it in subsequent sections.
-
 // Here’s a basic example of using a WaitGroup to wait for goroutines to complete:
 
 package main
